@@ -4,6 +4,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import './index.css'
 import { isUserLoggedIn, login } from '../../actions';
 import { useDispatch, useSelector } from 'react-redux';
+import { Redirect } from 'react-router-dom'
+
 
 
 const useStyles = makeStyles((theme) => ({
@@ -35,6 +37,8 @@ const Login = () => {
     const [error, setError] = useState("")
     const dispatch= useDispatch();
     const auth= useSelector(state => state.auth)
+
+   
     
     
     useEffect(() => {
@@ -44,6 +48,12 @@ const Login = () => {
       }
         
     }, [])
+
+    if (auth.authenticate) {
+      return <Redirect to={"/"}></Redirect>;
+    }
+
+   
     
 
     const userLogin = (e) => {
@@ -106,17 +116,24 @@ const Login = () => {
         />
         <br/>
         <br/>
+
+
+
         <Button variant="contained" color="primary" fullWidth disableElevation size="large" type="submit" className={classes.button}>
           Login
         </Button>
+        <br/>
+        <br/>
+        {auth.error ? <Typography variant="subtitle1" style={{color: 'red'}}>{Object.values(auth.error)[0]}</Typography> : null}
+
         </form>
         
         <br/>
-        <br/>
-        <br/>
+      
+        
         
         <Typography variant="body2" color="secondary" align="center" className={classes.text}>
-          Don't have an account? <span style={{color: '#fff'}}><a href="/#/signup" style={{textDecoration: 'none', color: '#116535'}}>Signup</a></span>
+          Don't have an account? <span style={{color: '#fff'}}><a href="/#/register" style={{textDecoration: 'none', color: '#116535'}}>Signup</a></span>
         </Typography>
 
 

@@ -3,7 +3,8 @@ const initState= {
     token: null,
     authenticate: false,
     authenticating: false,
-    error: null
+    error: null,
+    loading: false
     
 }
 
@@ -30,6 +31,24 @@ export default(state= initState, action)=>{
                 ...state,
                 error: action.payload.error
 
+            }
+            break;
+        case authConstants.LOGOUT_REQUEST:
+            state={
+                ...state,
+                loading: false
+            }
+            break;
+        case authConstants.LOGOUT_SUCCESS:
+            state={
+                ...initState
+            }
+            break;
+        case authConstants.LOGOUT_FAILURE:
+            state={
+                ...state,
+                error: action.payload.error,
+                loading: false
             }
             break;
     }
