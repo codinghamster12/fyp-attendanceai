@@ -11,6 +11,7 @@ urlpatterns = [
     path('student-create/',views.studentCreate,name="student-create"),
     path('student-update/<str:pk>/',views.studentUpdate,name="student-update"),
     path('student-delete/<str:pk>/',views.studentDelete,name="student-delete"),
+    path('attendance/',views.takeAttendance,name="attendance"),
 
 
 ]

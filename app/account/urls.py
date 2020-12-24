@@ -7,7 +7,9 @@ urlpatterns=[
     path('', views.apiOverview, name="api-overview"),
     path('register/', views.registration_view, name='register'),
     path('login/', obtain_auth_token, name='login'),
-    path('logout/', views.logout, name='logout')
+    path('logout/', views.logout, name='logout'),
+    
+
 
 
 

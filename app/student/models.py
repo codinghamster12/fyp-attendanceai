@@ -16,3 +16,15 @@ class Student(models.Model):
 
     def __str__(self):
         return self.Name
+
+class Attendance(models.Model):
+    course= models.CharField(max_length=200)
+    semester= models.IntegerField()
+    section= models.CharField(max_length=200)
+    period= models.IntegerField()
+
+
+    def __str__(self):
+        return self.course
+
+

@@ -14,14 +14,19 @@ const useStyles = makeStyles((theme) => ({
         fontWeight: 500,
         fontSize: 18,
         marginTop: 50,
-        fontFamily: 'Montserrat, sans-serif'
+        fontFamily: 'Montserrat, sans-serif',
+        fontWeight: 600
     },
     button:{
-        textAlign: 'center'
+        textAlign: 'center',
+        color: '#fff'
     },
    text:{
      marginBottom: 50,
-     fontFamily: 'Montserrat, sans-serif'
+     fontFamily: 'Montserrat, sans-serif',
+     fontWeight: 550
+
+
 
    }
 
@@ -69,18 +74,18 @@ const Login = () => {
       <Box
         p="24px"
         mt="50px"
-        bgcolor="black"
+        bgcolor="#fff"
         boxShadow="10"
         borderRadius="15px"
       >
 
         
         <form onSubmit={userLogin}>
-        <Typography align="center" variant="body1" color="secondary" className={classes.subheading}>
+        <Typography align="center" variant="body1" color="textSecondary" className={classes.subheading}>
           Sign in to your account
         </Typography>
         <br/>
-        <Typography variant="caption" color="secondary">
+        <Typography variant="caption" style={{ fontWeight: 600}} color="textSecondary">
           Email
         </Typography>
         <br/>
@@ -98,7 +103,7 @@ const Login = () => {
           
 
         />
-        <Typography variant="caption" color="secondary">
+        <Typography variant="caption" color="textSecondary"  style={{ fontWeight: 600}} >
           Password
         </Typography>
         <TextField
@@ -132,8 +137,8 @@ const Login = () => {
       
         
         
-        <Typography variant="body2" color="secondary" align="center" className={classes.text}>
-          Don't have an account? <span style={{color: '#fff'}}><a href="/#/register" style={{textDecoration: 'none', color: '#116535'}}>Signup</a></span>
+        <Typography variant="body2" color="textSecondary" align="center" className={classes.text}>
+          Don't have an account? <span style={{color: '#000'}}><a href="/#/register" style={{textDecoration: 'none', color: '#00acc1'}}>Signup</a></span>
         </Typography>
 
 

@@ -176,6 +176,7 @@ class AddStudent extends Component {
           <Button variant="contained" color="primary" disableElevation size="large" type="submit" >
           Add Student
         </Button>
+        
 
 
         </form>

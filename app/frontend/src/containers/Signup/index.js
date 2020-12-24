@@ -22,10 +22,12 @@ const useStyles = makeStyles((theme) => ({
   },
   button: {
     textAlign: "center",
+    color: '#fff'
   },
   text: {
     marginBottom: 30,
     fontFamily: "Montserrat, sans-serif",
+    
   },
 }));
 
@@ -62,7 +64,7 @@ const Signup = () => {
       <Box
         p="24px"
         mt="50px"
-        bgcolor="black"
+        bgcolor="#fff"
         boxShadow="10"
         borderRadius="15px"
       >
@@ -76,7 +78,7 @@ const Signup = () => {
             Sign up your account
           </Typography>
           <br />
-          <Typography variant="caption" color="secondary">
+          <Typography variant="caption" color="textSecondary">
             Email
           </Typography>
           <br />
@@ -92,7 +94,7 @@ const Signup = () => {
             inputProps={{ style: { background: "#fff" } }}
             onChange={(e) => setEmail(e.target.value)}
           />
-          <Typography variant="caption" color="secondary">
+          <Typography variant="caption" color="textSecondary">
             Username
           </Typography>
           <br />
@@ -109,7 +111,7 @@ const Signup = () => {
             onChange={(e) => setUsername(e.target.value)}
           />
 
-          <Typography variant="caption" color="secondary">
+          <Typography variant="caption" color="textSecondary">
             Password
           </Typography>
           <TextField
@@ -124,7 +126,7 @@ const Signup = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
 
-          <Typography variant="caption" color="secondary">
+          <Typography variant="caption" color="textSecondary">
             Confirm Password
           </Typography>
           <TextField

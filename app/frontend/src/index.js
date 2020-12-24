@@ -13,10 +13,13 @@ window.store= store;
 const theme= createMuiTheme({
   palette:{
     primary: {
-      main: '#116535'
+      main: '#00acc1'
     },
     secondary:{
-      main: '#fff'
+      main: '#000'
+    },
+    textSecondary:{
+      main: '#000'
     }
     
 },

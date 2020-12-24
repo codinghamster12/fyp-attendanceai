@@ -9,6 +9,7 @@ from .serializers import RegistrationSerializer
 
 # Create your views here.
 
+
 @api_view(['GET'])
 def apiOverview(request):
     api_urls={
