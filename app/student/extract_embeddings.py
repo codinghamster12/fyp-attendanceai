@@ -22,11 +22,12 @@ def createEmbeddings():
 
     # load our serialized face detector from disk
     print("[INFO] loading face detector...")
-    workpath = os.path.dirname(os.path.abspath('deploy.prototxt'))
-    print(workpath)
-    protoPath = open(os.path.join(workpath, "deploy.prototxt"), 'rb')
-    modelPath = open(os.path.join(workpath,
-        "res10_300x300_ssd_iter_140000.caffemodel"), 'rb')
+    base_dir= os.path.dirname(__file__)
+    protoPath = ['C:/Users/bisma/fyp-attendanceai/face_detection_model/deploy.prototxt']
+        
+    modelPath =  ['C:/Users/bisma/fyp-attendanceai/face_detection_model/res10_300x300_ssd_iter_140000.caffemodel']
+    print('protoPath',protoPath)
+    print('modelPath',modelPath)
     detector = cv2.dnn.readNetFromCaffe(protoPath, modelPath)
 
     # load our serialized face embedding model from disk
@@ -110,7 +111,7 @@ def createEmbeddings():
     # dump the facial embeddings + names to disk
     print("[INFO] serializing {} encodings...".format(total))
     data = {"embeddings": knownEmbeddings, "names": knownNames}
-    f = open('output/embeddings.pickle', "wb")
+    f = open('C:/Users/bisma/fyp-attendanceai/output/embeddings.pickle', "wb")
     f.write(pickle.dumps(data))
     f.close()
 
