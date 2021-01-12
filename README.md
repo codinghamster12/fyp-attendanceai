@@ -1,2 +1,2 @@
-# Facial_Attendance_Recognition_System_backend
-Backend of facial attendance recognition system
+# Facial_Attendance_Recognition_System
+facial attendance recognition system
