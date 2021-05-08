@@ -1,11 +1,8 @@
 from rest_framework import serializers
 from .models import Student, Attendance, studentImage
-<<<<<<< HEAD
 from .add_student import addImages
 from .create_person import create_person
 from .add_person_faces import get_faces
-=======
->>>>>>> f7255974216ffce9301f06dd75f44086543f3dac
 
 class studentImageSerializer(serializers.ModelSerializer):
     class Meta:
@@ -23,13 +20,9 @@ class StudentSerializer(serializers.HyperlinkedModelSerializer):
 
     def create(self, validated_data):
         images_data = self.context.get('view').request.FILES
-<<<<<<< HEAD
         student = Student.objects.create(
 
         Name=validated_data.get('Name', 'no-name'),
-=======
-        student = Student.objects.create(Name=validated_data.get('Name', 'no-name'),
->>>>>>> f7255974216ffce9301f06dd75f44086543f3dac
         Enrollment_No= validated_data.get('Enrollment_No', 'none'),
         Registration_No= validated_data.get('Registration_No', 'none'),
         Semester= validated_data.get('Semester', 0),
@@ -39,15 +32,12 @@ class StudentSerializer(serializers.HyperlinkedModelSerializer):
                                     )
         for image_data in images_data.values():
             studentImage.objects.create(student=student, image=image_data)
-<<<<<<< HEAD
         Registration_No= validated_data.get('Registration_No', 'none')
         addImages(Registration_No)
         create_person(Registration_No)
         get_faces(Registration_No)
 
 
-=======
->>>>>>> f7255974216ffce9301f06dd75f44086543f3dac
         return student  
 
 
