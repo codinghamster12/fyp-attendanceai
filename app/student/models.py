@@ -15,10 +15,7 @@ class Student(models.Model):
     Year=models.CharField(max_length=200)
     Course_Name=models.CharField(max_length=200)
     Course_Code=models.CharField(max_length=200)
-<<<<<<< HEAD
     personID= models.CharField(max_length=200, default=0)
-=======
->>>>>>> f7255974216ffce9301f06dd75f44086543f3dac
     registered_at= models.DateField(auto_now_add=True)
 
     def __str__(self):
