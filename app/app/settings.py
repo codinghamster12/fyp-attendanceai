@@ -84,7 +84,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR, 'frontend/build')
+            os.path.join(BASE_DIR, 'react-admin-dashboard/build')
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -154,6 +154,6 @@ MEDIA_URL= '/media/'
 MEDIA_ROOT= os.path.join(BASE_DIR, 'media')
 
 STATICFILES_DIRS=[
-     os.path.join(BASE_DIR, 'frontend/build/static')
+     os.path.join(BASE_DIR, 'react-admin-dashboard/build/static')
 
 ]

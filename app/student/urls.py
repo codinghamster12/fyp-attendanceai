@@ -1,17 +1,18 @@
-from django.urls import path
+from django.urls import path, include
+from rest_framework import routers
 from . import views
 
+router= routers.DefaultRouter()
+router.register('student', viewset= views.StudentViewset)
 urlpatterns = [
     
   
   
-    path('',views.studentsOverview,name="students-overview"),
-    path('student-list/',views.studentList,name="student-list"),
-    path('student-detail/<str:pk>/',views.studentDetail,name="student-detail"),
-    path('student-create/',views.studentCreate,name="student-create"),
-    path('student-update/<str:pk>/',views.studentUpdate,name="student-update"),
-    path('student-delete/<str:pk>/',views.studentDelete,name="student-delete"),
-    path('attendance/',views.takeAttendance,name="attendance"),
+
+    path('', include(router.urls))
+    
+
+
 
 
 ]
