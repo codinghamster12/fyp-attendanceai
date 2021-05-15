@@ -98,15 +98,15 @@ export const logout = () => {
     
 
             }
-            else{
-                if(res.status == 401){
-                    dispatch({
-                        type: authConstants.LOGOUT_SUCCESS,
+            // else{
+            //     if(res.status == 401){
+            //         dispatch({
+            //             type: authConstants.LOGOUT_SUCCESS,
                         
-                    })
+            //         })
 
-                }
-            }
+            //     }
+            // }
           
         }
         catch(error){

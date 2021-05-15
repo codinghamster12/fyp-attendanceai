@@ -5,6 +5,8 @@ import dlib
 import os                                                                       # for creating folders
 from subprocess import run
 import sys
+from skimage import io
+
 
 import urllib3
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
@@ -57,3 +59,4 @@ def addImages(Id):
 
     cap.release()                                                                   # turning the webcam off
     cv2.destroyAllWindows()                                                         # Closing all the opened windows
+

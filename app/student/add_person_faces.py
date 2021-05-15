@@ -1,7 +1,7 @@
 import sys
 import os, time
 import cognitive_face as CF
-from .global_variables import personGroupId
+from global_variables import personGroupId
 import urllib
 import sqlite3
 
@@ -20,12 +20,12 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 def get_person_id(Id):
 	person_id = ''
 	extractId = str(Id)[-5:]
-	connect = sqlite3.connect("db.sqlite3")
+	connect = sqlite3.connect("../db.sqlite3")
 	c = connect.cursor()
 	cmd = "SELECT * FROM student_student WHERE Registration_No = " + extractId
 	c.execute(cmd)
 	row = c.fetchone()
-	person_id = row[3]
+	person_id = row[9]
 	connect.close()
 	return person_id
 
@@ -45,3 +45,4 @@ def get_faces(Id):
             else:
                 res = CF.person.add_face(imgurl, personGroupId, person_id)
                 print (res)
+

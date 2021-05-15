@@ -25,8 +25,8 @@ const fields = [
   "Name",
   "Registration_No",
   "Semester",
-  "Year",
-  "Course_Code",
+  "Section",
+  "Course_Id",
   "edit",
   "delete",
 ];
@@ -40,9 +40,9 @@ export default function AllStudents() {
   const [Enrollment_No, setEnrollmentNo] = useState("");
   const [Registration_No, setRegistrationNo] = useState("");
   const [Semester, setSemester] = useState("");
-  const [Year, setYear] = useState("");
+  const [Section, setSection] = useState("");
   const [Course_Name, setCourseName] = useState("");
-  const [Course_Code, setCourseCode] = useState("");
+  const [Course_Id, setCourseId] = useState("");
   const [studentImages, setStudentImages] = useState([]);
   const [studentDetails, setStudentDetails]= useState({})
 
@@ -60,9 +60,9 @@ export default function AllStudents() {
     setEnrollmentNo(student.Enrollment_No)
     setRegistrationNo(student.Registration_No)
     setSemester(student.Semester)
-    setYear(student.Year)
+    setSection(student.Section)
     setCourseName(student.Course_Name)
-    setCourseCode(student.Course_Code)
+    setCourseId(student.Course_Id)
     let images=[]
     student.images.map(img => {
       images.push({'name': img.image.split('/')[6]})
@@ -88,9 +88,9 @@ export default function AllStudents() {
     form.append("Enrollment_No", Enrollment_No);
     form.append("Registration_No", Registration_No);
     form.append("Semester", Semester);
-    form.append("Year", Year);
+    form.append("Section", Section);
     form.append("Course_Name", Course_Name);
-    form.append("Course_Code", Course_Code);
+    form.append("Course_Id", Course_Id);
     // console.log(studentImages)
 
     // for (let image of studentImages){
@@ -226,19 +226,17 @@ export default function AllStudents() {
                 </CCol>
                 <CCol xs="6">
                   <CFormGroup>
-                    <CLabel htmlFor="select">Select Year</CLabel>
+                    <CLabel htmlFor="select">Select Section</CLabel>
                     <CSelect
-                      value={Year}
+                      value={Section}
                       custom
                       name="select"
                       id="select"
-                      onChange={(e) => setYear(e.target.value)}
+                      onChange={(e) => setSection(e.target.value)}
                     >
                       <option value="0">Please select</option>
-                      <option value="Fall 2020">Fall 2020</option>
-                      <option value="Spring 2021">Spring 2021</option>
-                      <option value="Fall 2021">Fall 2021</option>
-                      <option value="Spring 2022">Spring 2022</option>
+                      <option value="A">A</option>
+                      <option value="B">B</option>
                     </CSelect>
                   </CFormGroup>
                 </CCol>
@@ -265,19 +263,19 @@ export default function AllStudents() {
                 </CCol>
                 <CCol xs="6">
                   <CFormGroup>
-                    <CLabel htmlFor="select">Select Course Code</CLabel>
+                    <CLabel htmlFor="select">Select Course Id</CLabel>
                     <CSelect
-                      value={Course_Code}
+                      value={Course_Id}
                       custom
                       name="select"
                       id="select"
-                      onChange={(e) => setCourseCode(e.target.value)}
+                      onChange={(e) => setCourseId(e.target.value)}
                     >
                       <option value="0">Please select</option>
-                      <option value="D1-101">D1-101</option>
-                      <option value="ST-203">ST-203</option>
-                      <option value="AD-567">AD-567</option>
-                      <option value="TU-689">TU-689</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
                     </CSelect>
                   </CFormGroup>
                 </CCol>
