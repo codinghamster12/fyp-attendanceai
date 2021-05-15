@@ -21,7 +21,7 @@ class Migration(migrations.Migration):
                 ('Semester', models.IntegerField()),
                 ('Year', models.IntegerField()),
                 ('Course_Name', models.CharField(max_length=200)),
-                ('Course_Code', models.CharField(max_length=200)),
+                ('', models.CharField(max_length=200)),
                 ('images', models.ImageField(upload_to='uploads/')),
                 ('registered_at', models.DateField(auto_now_add=True)),
             ],
